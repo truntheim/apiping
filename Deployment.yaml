@@ -17,6 +17,7 @@ spec:
     spec:
       containers:
         - name: mycontainer
-          image: apiping:latest
+          image: karlob/apiping:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 8000

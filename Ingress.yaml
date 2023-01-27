@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apiping-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - path: /api/ping
+        pathType: Prefix
+        pathRewrite: /
+        backend:
+          service:
+            name: apiping
+            port:
+              name: http
+              number: 8000
+
