@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiping
+  labels:
+    app: apiping
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: apiping
+  template:
+    metadata:
+      labels:
+        app: apiping
+    spec:
+      containers:
+        - name: mycontainer
+          image: apiping:latest
+          ports:
+            - containerPort: 8000
