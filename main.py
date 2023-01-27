@@ -1,5 +1,5 @@
 from fastapi import FastAPI, status, HTTPException
-from scapy.all import IP, ICMP, PacketList, sr, sr1, srloop, raw, randstring
+from scapy.all import IP, ICMP, sr1, raw, randstring
 
 app = FastAPI()
 
