@@ -5,11 +5,6 @@ app = FastAPI()
 
 @app.get("/api/ping")
 async def ping(f_ipadd: str, f_timeout: int = 1, f_length: int = 56, f_count: int = 1):
-    #f_timeout=1
-    #f_length=72
-    #f_count=3
-    #f_ipadd="8.8.8.8"
-    #f_ipadd="10.10.10.10"
     icmp_packet = IP(dst=f_ipadd)/ICMP()/raw(randstring(length=f_length))
     replies = 0
     for x in range(f_count):
